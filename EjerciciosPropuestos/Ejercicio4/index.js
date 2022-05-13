@@ -10,13 +10,13 @@ function stripMeetCodeFromURL(url) {
   // meet.google.com/axe-mihi-jht?pli=1&authuser=2
 
   const beginsMeetCode = 16;
-  const amountLettersMeetCode = 11;
+  const amountLettersMeetCode = 12;
   url = url.substring(beginsMeetCode, beginsMeetCode + amountLettersMeetCode);
   // axe-mihi-jht
   let meetCode = "";
-  for(let letter of url) {
-    if(!(letter === "-")) {
-      meetCode += letter;
+  for(let i = 0; i < url.length; i++) {
+    if(!(url[i] === "-")) {
+      meetCode += url[i];
     }
   }
   return meetCode;

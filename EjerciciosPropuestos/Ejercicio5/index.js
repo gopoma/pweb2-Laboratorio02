@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sumForm.onsubmit = function() {
       const numInputs = document.querySelectorAll(".nums");
       const nums = [];
-      for(let numInput of numInputs) {
-        nums.push(numInput);
+      for(let i = 0; i < numInputs.length; i++) {
+        nums.push(numInputs[i]);
       }
       const sum = nums.reduce((a, b) => a + Math.floor(b.value), 0); // Could be better the use of Number.parseInt()
       sumResult.innerHTML = sum; // Could be better if textContent is used instead
